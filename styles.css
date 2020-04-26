@@ -18,9 +18,10 @@ display: none;
 
 .container {
     width: 100%;
-    max-width: 960px;
+    max-width: 1000px;
     margin: 0 auto;
     clear: both;
+    align-content: center;
 }
 
 h1, h2, h3, h4, p {
