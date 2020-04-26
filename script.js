@@ -1,30 +1,38 @@
 
 var startPage = document.getElementById("start-page");
 var startButton = document.getElementById("startbtn");
+let correctBtn = document.getElementById("correct");
+let incorrectBtn = document.getElementById("incorrect");
 var timer;
 var time = 60;
 var timerEl = document.querySelector(".timer");
-
+var qu
 
 //EVENT LISTENERS
 startButton.addEventListener("click", startQuiz);
+// correctBtn.addEventListener("click", correctAnswer);
+// incorrectBtn.addEventListener("click", incorrectAnswer);
 
 //QUESTION VARIABLES
-//var
-var questions = document.getElementById("questions").children;
+var questionsContainer = document.getElementById("questions")
+var questions = questionsContainer.children;
 var questionIndex = 0;
-
+console.log(questionsContainer)
 function showCurrentQuestion() {
     if (questionIndex > 0) {
         questions[questionIndex - 1].classList.add("hide");
     }
     questions[questionIndex].classList.remove("hide");
 
-    // if (co)
-
 }
-console.log(questions)
 
+// let lastQuestionIndex = questionsArr.length - 1;
+// let currentQuestionIndex = 0;
+// let questionsArr = questions;
+
+function nextQuestion() {
+    questionIndex + 1;
+}
 
 //START TIMER
 function startTimer() {
@@ -33,7 +41,8 @@ function startTimer() {
 
     if (time === 0) {
         clearInterval(timer);
-        timerEl.textContent = "YOU ARE OUT OF TIME!"
+        timerEl.textContent = "YOU ARE OUT OF TIME!";
+        questions[questionIndex].classList.add("hide");
     }
 }
 //START QUIZ
@@ -48,18 +57,11 @@ function startQuiz() {
 //CORRECT ANSWER FUNCTION
 function correctAnswer() {
     alert("You Got it RIGHT!");
-    question1.classList.add("hide");
-    question2.classList.remove("hide");
-}
+    ;
+};
 
 //INCORRECT ANSWER FUNCTION
 function incorrectAnswer() {
     alert("Wow...did you even study bro!?");
-    question1.classList.add("hide");
-    question2.classList.remove("hide");
+    showCurrentQuestion();
 }
-
-// var question1 = document.getElementById("q1");
-// var correctAnswers = document.getElementByClass("correct");
-//var incorrectAnswer = document.querySelectorAll("incorrect");
-//console.log(incorrectAnswer)
